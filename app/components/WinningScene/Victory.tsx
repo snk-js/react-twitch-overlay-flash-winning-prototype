@@ -1,35 +1,30 @@
 "use client";
 
 import { useState } from "react";
-import {
-  useConfettiEffect,
-  useFlashbangEffect,
-  useGlitchEffect,
-} from "./hooks/useWinningEffects";
+import { useVictoryEffects } from "./hooks/useWinningEffects";
 
 const VictoryScene = () => {
-  const [triggerVictory, setTriggerVictory] = useState(false);
+  const [showVictory, setShowVictory] = useState(false);
 
-  useFlashbangEffect(triggerVictory);
-  useGlitchEffect(triggerVictory);
-  useConfettiEffect(triggerVictory);
+  useVictoryEffects(showVictory);
 
   return (
     <div className="w-full h-full flex justify-center items-center">
       <button
-        onClick={() => setTriggerVictory(true)}
+        onClick={() => setShowVictory(true)}
         className="px-4 py-2 bg-blue-500 text-white rounded"
       >
         Toggle Victory
       </button>
 
-      {triggerVictory && (
+      {showVictory && (
         <div className="victory-text text-6xl font-bold absolute">
           🎉 VICTORY! 🎉
         </div>
       )}
 
-      <div className="overlay fixed inset-0 pointer-events-none opacity-0" />
+      {/* Overlay for flashbang effect */}
+      <div className="overlay fixed inset-0 pointer-events-none opacity-0 bg-white" />
     </div>
   );
 };
