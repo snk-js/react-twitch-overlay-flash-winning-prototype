@@ -8,7 +8,7 @@ export const useGlitchEffect = (trigger: number) => {
     () => {
       if (trigger === 0) return;
 
-      gsap.to(".victory-text", {
+      gsap.to(".victory-container", {
         keyframes: [
           { x: -2, y: 2, filter: "hue-rotate(90deg)" },
           { x: 2, y: -2, filter: "hue-rotate(-90deg)" },

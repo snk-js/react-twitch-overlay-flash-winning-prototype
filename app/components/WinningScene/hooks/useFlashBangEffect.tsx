@@ -10,12 +10,12 @@ export const useFlashbangEffect = (trigger: number) => {
 
       gsap
         .timeline()
-        .to(".overlay", {
+        .to(".flash-overlay", {
           backgroundColor: "white",
           opacity: 1,
           duration: 0.1,
         })
-        .to(".overlay", {
+        .to(".flash-overlay", {
           opacity: 0,
           duration: 0.5,
           ease: "power2.out",
