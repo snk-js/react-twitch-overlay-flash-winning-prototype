@@ -1,0 +1,46 @@
+
+1. which animation library like three.js I could integrate with react app 19.2 version in order to simulate a winning screen scene for a twitch overlay, that "Victory" Scene has many effects and I wanted to take advantage of some excellent animation library to apply some of the there effects like flashbanging, lightning ray, glitch on the Victory text?
+
+- info collected:
+  - Three.js and React3Fiber are too overkill for 2d animations
+  - GSAP sounds good to go on a demo
+
+```
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import confetti from 'canvas-confetti';
+
+function VictoryScene() {
+  useGSAP(() => {
+    // Flashbang effect
+    gsap.timeline()
+      .to('.overlay', { 
+        backgroundColor: 'white', 
+        opacity: 1, 
+        duration: 0.1 
+      })
+      .to('.overlay', { 
+        opacity: 0, 
+        duration: 0.5, 
+        ease: 'power2.out' 
+      });
+    
+    // Glitch text animation
+    gsap.to('.victory-text', {
+      keyframes: [
+        { x: -2, y: 2, filter: 'hue-rotate(90deg)' },
+        { x: 2, y: -2, filter: 'hue-rotate(-90deg)' },
+        { x: 0, y: 0, filter: 'hue-rotate(0deg)' }
+      ],
+      duration: 0.2,
+      repeat: 5
+    });
+    
+    // Trigger confetti
+    confetti({ 
+      particleCount: 100, 
+      spread: 70 
+    });
+  });
+}
+```
