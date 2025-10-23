@@ -12,10 +12,10 @@ const VictoryScene = () => {
 
   // All effects use the same trigger but with different delays
   useDarkenEffect(victoryTrigger, 0); // Starts immediately
-  useLetterRevealEffect(victoryTrigger, 0.3); // After 0.3s
-  useFlashbangEffect(victoryTrigger, 0.3); // After 0.3s (with letters)
-  useGlitchEffect(victoryTrigger, 1.0); // After 1s
-  useConfettiEffect(victoryTrigger, 1000); // After 1s (in ms)
+  useLetterRevealEffect(victoryTrigger, 0.6); // After 0.3s
+  useFlashbangEffect(victoryTrigger, 0.9); // After 0.3s (with letters)
+  useGlitchEffect(victoryTrigger, 2); // After 1s
+  useConfettiEffect(victoryTrigger, 1.5); // After 1s (in ms)
 
   const triggerVictory = () => {
     setVictoryTrigger((prev) => prev + 1);

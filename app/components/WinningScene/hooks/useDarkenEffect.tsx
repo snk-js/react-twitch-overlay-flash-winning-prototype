@@ -6,7 +6,10 @@ import gsap from "gsap";
 export const useDarkenEffect = (trigger: number, delay: number = 0) => {
   useGSAP(
     () => {
-      if (trigger === 0) return;
+      if (trigger === 0) {
+        gsap.set(".dark-overlay", { opacity: 0 });
+        return;
+      }
 
       gsap.timeline({ delay }).to(".dark-overlay", {
         opacity: 0.9,
