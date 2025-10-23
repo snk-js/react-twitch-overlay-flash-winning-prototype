@@ -20,7 +20,7 @@ export const useLightningEffect = (trigger: number, delay: number = 0) => {
         })
         .to(".lightning-stripe", {
           scaleX: 1,
-          duration: 0.05,
+          duration: 0.02,
           ease: "none",
         });
     },
