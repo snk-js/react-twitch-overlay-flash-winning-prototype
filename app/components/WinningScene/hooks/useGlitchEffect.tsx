@@ -3,12 +3,12 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-export const useGlitchEffect = (trigger: number) => {
+export const useGlitchEffect = (trigger: number, delay: number = 0) => {
   useGSAP(
     () => {
       if (trigger === 0) return;
 
-      gsap.to(".victory-container", {
+      gsap.timeline({ delay }).to(".victory-container", {
         keyframes: [
           { x: -2, y: 2, filter: "hue-rotate(90deg)" },
           { x: 2, y: -2, filter: "hue-rotate(-90deg)" },

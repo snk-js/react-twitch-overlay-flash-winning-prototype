@@ -3,14 +3,14 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-export const useLetterRevealEffect = (trigger: number) => {
+export const useLetterRevealEffect = (trigger: number, delay: number = 0) => {
   useGSAP(
     () => {
       if (trigger === 0) return;
 
       const letters = gsap.utils.toArray(".victory-letter");
 
-      gsap.fromTo(
+      gsap.timeline({ delay }).fromTo(
         letters,
         {
           opacity: 0,

@@ -6,21 +6,19 @@ import { useLetterRevealEffect } from "./hooks/useLetterRevealEffect";
 import { useFlashbangEffect } from "./hooks/useFlashBangEffect";
 import { useGlitchEffect } from "./hooks/useGlitchEffect";
 import { useConfettiEffect } from "./hooks/useConfettiEffect";
-import { useVictorySequence } from "./hooks/useVictorySequence";
 
 const VictoryScene = () => {
-  const [mainTrigger, setMainTrigger] = useState(0);
-  const triggers = useVictorySequence(mainTrigger);
+  const [victoryTrigger, setVictoryTrigger] = useState(0);
 
-  // Apply individual effects
-  useDarkenEffect(triggers.darken);
-  useLetterRevealEffect(triggers.letterReveal);
-  useFlashbangEffect(triggers.flashbang);
-  useGlitchEffect(triggers.glitch);
-  useConfettiEffect(triggers.confetti);
+  // All effects use the same trigger but with different delays
+  useDarkenEffect(victoryTrigger, 0); // Starts immediately
+  useLetterRevealEffect(victoryTrigger, 0.3); // After 0.3s
+  useFlashbangEffect(victoryTrigger, 0.3); // After 0.3s (with letters)
+  useGlitchEffect(victoryTrigger, 1.0); // After 1s
+  useConfettiEffect(victoryTrigger, 1000); // After 1s (in ms)
 
   const triggerVictory = () => {
-    setMainTrigger((prev) => prev + 1);
+    setVictoryTrigger((prev) => prev + 1);
   };
 
   const victoryLetters = "VICTORY".split("");
@@ -34,7 +32,7 @@ const VictoryScene = () => {
       <div className="flash-overlay fixed inset-0 opacity-0 pointer-events-none z-20" />
 
       {/* Victory Text Container */}
-      {mainTrigger > 0 && (
+      {victoryTrigger > 0 && (
         <div className="victory-container flex gap-2 z-30">
           {victoryLetters.map((letter, index) => (
             <span
@@ -72,10 +70,10 @@ const VictoryScene = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
       </button>
 
-      {/* Optional: Reset Button */}
-      {mainTrigger > 0 && (
+      {/* Reset Button */}
+      {victoryTrigger > 0 && (
         <button
-          onClick={() => setMainTrigger(0)}
+          onClick={() => setVictoryTrigger(0)}
           className="px-6 py-3 bg-gray-700 hover:bg-gray-600
                      text-white rounded-lg font-medium
                      transition-all duration-200 

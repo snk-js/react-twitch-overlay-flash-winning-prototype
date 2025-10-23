@@ -3,13 +3,13 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-export const useFlashbangEffect = (trigger: number) => {
+export const useFlashbangEffect = (trigger: number, delay: number = 0) => {
   useGSAP(
     () => {
       if (trigger === 0) return;
 
       gsap
-        .timeline()
+        .timeline({ delay })
         .to(".flash-overlay", {
           backgroundColor: "white",
           opacity: 1,
