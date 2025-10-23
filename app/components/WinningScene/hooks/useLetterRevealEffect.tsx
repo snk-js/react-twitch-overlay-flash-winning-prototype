@@ -14,16 +14,20 @@ export const useLetterRevealEffect = (trigger: number, delay: number = 0) => {
         letters,
         {
           opacity: 0,
-          y: -50,
-          rotationX: -90,
+          x: 1000,
+          y: 1000,
+          scale: 1,
+          rotation: 45,
         },
         {
           opacity: 1,
+          x: 0,
           y: 0,
-          rotationX: 0,
-          duration: 0.4,
-          stagger: 0.1,
-          ease: "back.out(1.7)",
+          scale: 1,
+          rotation: 0,
+          duration: 0.1,
+          stagger: 0.03,
+          ease: "power3.out",
         }
       );
     },

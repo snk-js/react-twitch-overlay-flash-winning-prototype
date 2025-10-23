@@ -2,10 +2,8 @@ import VictoryScene from "./components/WinningScene/Victory";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-500 font-sans">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-zinc-700 sm:items-start">
-        <VictoryScene />
-      </main>
+    <div className="h-screen w-screen bg-gray-800">
+      <VictoryScene />
     </div>
   );
 }
