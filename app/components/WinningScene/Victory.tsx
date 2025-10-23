@@ -1,3 +1,4 @@
+// Victory.tsx - Add the explosion effect
 "use client";
 
 import { useState } from "react";
@@ -6,9 +7,11 @@ import { useLetterRevealEffect } from "./hooks/useLetterRevealEffect";
 import { useFlashbangEffect } from "./hooks/useFlashBangEffect";
 import { useGlitchEffect } from "./hooks/useGlitchEffect";
 import { useLightningEffect } from "./hooks/useLightningEffect";
+import { useExplosionEffect } from "./hooks/useExplosionEffect";
 import { DarkOverlay } from "../DarkOverlay";
 import { FlashOverlay } from "../FlashOverlay";
 import { LightningStripe } from "../LightningStripe";
+import { ExplosionRing } from "../ExplosionRing";
 import { ControlButtons } from "../ControlButtons";
 import { VictoryText } from "../VictoryText";
 
@@ -18,6 +21,7 @@ const VictoryScene = () => {
   // All effects use the same trigger but with different delays
   useDarkenEffect(victoryTrigger, 0); // Starts immediately
   useLightningEffect(victoryTrigger, 0); // Lightning flash
+  useExplosionEffect(victoryTrigger, 0.3); // Explosion right after lightning
   useLetterRevealEffect(victoryTrigger, 0.4); // After 0.4s
   useFlashbangEffect(victoryTrigger, 0.42); // After 0.42s (with letters)
   useGlitchEffect(victoryTrigger, 0.6); // After 0.6s
@@ -36,6 +40,7 @@ const VictoryScene = () => {
       <DarkOverlay />
       <FlashOverlay />
       <LightningStripe />
+      <ExplosionRing />
 
       {/* Control Buttons */}
       <ControlButtons

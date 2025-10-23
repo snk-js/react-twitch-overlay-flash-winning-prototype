@@ -14,8 +14,8 @@ export const useGlitchEffect = (trigger: number, delay: number = 0) => {
           { x: 2, y: -2, filter: "hue-rotate(-90deg)" },
           { x: 0, y: 0, filter: "hue-rotate(0deg)" },
         ],
-        duration: 0.2,
-        repeat: 5,
+        duration: 0.15,
+        repeat: 20,
       });
     },
     { dependencies: [trigger] }

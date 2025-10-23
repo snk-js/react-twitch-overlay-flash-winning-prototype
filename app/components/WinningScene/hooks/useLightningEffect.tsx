@@ -8,7 +8,11 @@ export const useLightningEffect = (trigger: number, delay: number = 0) => {
     () => {
       // Reset when trigger is 0
       if (trigger === 0) {
-        gsap.set(".lightning-stripe", { scaleX: 0, opacity: 0 });
+        gsap.set(".lightning-stripe", {
+          scaleX: 0,
+          opacity: 0,
+          filter: "blur(0px) brightness(1)",
+        });
         return;
       }
 
@@ -17,11 +21,44 @@ export const useLightningEffect = (trigger: number, delay: number = 0) => {
         .set(".lightning-stripe", {
           scaleX: 0,
           opacity: 1,
+          filter: "blur(0px) brightness(1)",
         })
         .to(".lightning-stripe", {
           scaleX: 1,
-          duration: 0.02,
+          duration: 0.06,
           ease: "none",
+        })
+        .to(
+          ".lightning-stripe",
+          {
+            filter: "blur(8px) brightness(2)",
+            duration: 0.03,
+            ease: "power2.out",
+          },
+          "-=0.03"
+        )
+        .to(".lightning-stripe", {
+          filter: "blur(4px) brightness(1.5)",
+          duration: 0.05,
+          ease: "power2.inOut",
+        })
+        .to(".lightning-stripe", {
+          filter: "blur(0px) brightness(1)",
+          opacity: 0,
+          duration: 0.1,
+          ease: "power2.in",
+        })
+        .to(".lightning-stripe", {
+          filter: "blur(0px) brightness(1)",
+          opacity: 1,
+          duration: 0.7,
+          ease: "power2.in",
+        })
+        .to(".lightning-stripe", {
+          filter: "blur(0px) brightness(1)",
+          opacity: 0,
+          duration: 1.5,
+          ease: "power2.in",
         });
     },
     { dependencies: [trigger] }

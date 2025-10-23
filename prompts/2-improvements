@@ -12,4 +12,72 @@
    
    darkening screen appears first after 0.3 seconds, Victory word starts its letter placing sequentially, together with flashbang after words been placed, confetti gets fired"
    ```
+3. Prompt:
+   1. ```"now I want to create an explosion effect, like a circle stripe growing and expading from center to outer"```
+   2. after that prompt I have copied a primitive explosion effect:
+      1. 
+      ```
+      "use client";
 
+        export const ExplosionRing = () => {
+        return (
+            <div
+            className="explosion-ring fixed pointer-events-none opacity-0 z-35"
+            style={{
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: "200px",
+                height: "200px",
+                borderRadius: "50%",
+                border: "8px solid #FFD700",
+                boxShadow: `
+                0 0 20px 5px rgba(255, 215, 0, 0.8),
+                0 0 40px 10px rgba(255, 165, 0, 0.6),
+                inset 0 0 20px rgba(255, 255, 255, 0.5)
+                `,
+            }}
+            />
+        );
+        };
+      ```
+      2. 
+      ```
+      "use client";
+
+        import { useGSAP } from "@gsap/react";
+        import gsap from "gsap";
+
+        export const useExplosionEffect = (trigger: number, delay: number = 0) => {
+        useGSAP(
+            () => {
+            // Reset when trigger is 0
+            if (trigger === 0) {
+                gsap.set(".explosion-ring", {
+                scale: 0,
+                opacity: 0,
+                rotation: 0,
+                });
+                return;
+            }
+
+            gsap
+                .timeline({ delay })
+                .set(".explosion-ring", {
+                scale: 0,
+                opacity: 1,
+                rotation: 0,
+                })
+                .to(".explosion-ring", {
+                scale: 8,
+                opacity: 0,
+                rotation: 180,
+                duration: 1.2,
+                ease: "power2.out",
+                });
+            },
+            { dependencies: [trigger] }
+        );
+        };
+      ```
+      3. After that I have done the current change by changing variables manually and adapting to main VictoryScene

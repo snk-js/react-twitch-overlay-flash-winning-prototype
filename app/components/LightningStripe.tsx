@@ -5,14 +5,14 @@ export const LightningStripe = () => {
     <div
       className="lightning-stripe fixed left-0 pointer-events-none opacity-0 z-40"
       style={{
-        top: "50%",
+        top: "45%",
         transform: "translateY(-50%) rotate(-5deg)",
         transformOrigin: "right center",
         width: "100vw",
-        height: "120px",
+        height: "30px",
         background:
-          "linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.3) 10%, #FFD700 50%, rgba(255,255,255,0.3) 90%, transparent 100%)",
-        boxShadow: "0 0 40px 10px rgba(255, 215, 0, 0.8)",
+          "linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.9) 10%, #FF0 50%, rgba(255,255,255) 60%, transparent 100%)",
+        boxShadow: "30px 10px 400px 20px rgba(255, 255, 0, 0.5)",
       }}
     />
   );

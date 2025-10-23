@@ -10,11 +10,11 @@ export const VictoryText = ({ visible }: VictoryTextProps) => {
   const victoryLetters = "VICTORY".split("");
 
   return (
-    <div className="victory-container flex gap-2 z-50">
+    <div className="victory-container flex gap-0.5 z-50">
       {victoryLetters.map((letter, index) => (
         <span
           key={index}
-          className="victory-letter text-8xl font-black text-transparent bg-clip-text bg-gradient-to-b from-yellow-400 via-orange-500 to-red-600 drop-shadow-[0_0_30px_rgba(255,165,0,0.8)]"
+          className="victory-letter text-8xl font-black italic text-transparent bg-clip-text bg-gradient-to-b from-yellow-400 via-orange-500 to-red-600 drop-shadow-[0_0_30px_rgba(255,165,0,0.8)]"
           style={{
             WebkitTextStroke: "2px black",
             paintOrder: "stroke fill",
