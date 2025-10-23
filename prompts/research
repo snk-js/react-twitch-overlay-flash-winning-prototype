@@ -44,3 +44,7 @@ function VictoryScene() {
   });
 }
 ```
+
+2. How to fix that, and decouple GSAP components properly, supposing I wante to stack different effects into a display of the winning scene
+    - After implementing above snipper, some errors started appearing
+    - I have fixed them, and decoupling effects for initial POC.

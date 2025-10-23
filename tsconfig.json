@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@/hooks":["./app/components/WinningScene/hooks/*"]
     }
   },
   "include": [
