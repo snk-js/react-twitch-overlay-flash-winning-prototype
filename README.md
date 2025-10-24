@@ -32,8 +32,7 @@ https://www.awesomescreenshot.com/video/45609981?key=d00e5d46faf41cd011daa32a5ae
 
 
 ## Demo
-
-https://github.com/user-attachments/assets/ccd138b9-496b-40e9-8633-bea232b598bb
+[Create Next App (1).webm](https://github.com/user-attachments/assets/c76e36a2-3e84-4d3c-a243-e65f85ca4ebe)
 
 ## Effects
 
