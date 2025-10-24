@@ -50,14 +50,21 @@ export const useLightningEffect = (trigger: number, delay: number = 0) => {
         .to(".lightning-stripe", {
           filter: "blur(0px) brightness(1)",
           opacity: 1,
-          duration: 0.7,
-          ease: "power2.in",
+          duration: 0,
+          ease: "power2.inOut",
         })
         .to(".lightning-stripe", {
-          filter: "blur(0px) brightness(1)",
-          opacity: 0,
-          duration: 1.5,
+          filter: "blur(3px) brightness(1)",
+          opacity: 0.2,
+          duration: 1,
+          ease: "power2.inOut",
+        })
+        .to(".lightning-stripe", {
+          filter: "blur(3px) brightness(0)",
+          opacity: 1,
+          duration: 0.5,
           ease: "power2.in",
+          scaleX: 0,
         });
     },
     { dependencies: [trigger] }

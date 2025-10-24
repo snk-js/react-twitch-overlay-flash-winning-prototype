@@ -5,7 +5,7 @@ export const LightningStripe = () => {
     <div
       className="lightning-stripe fixed left-0 pointer-events-none opacity-0 z-40"
       style={{
-        top: "45%",
+        top: "42%",
         transform: "translateY(-50%) rotate(-5deg)",
         transformOrigin: "right center",
         width: "100vw",

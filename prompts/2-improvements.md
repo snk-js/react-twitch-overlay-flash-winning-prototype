@@ -81,3 +81,5 @@
         };
       ```
       3. After that I have done the current change by changing variables manually and adapting to main VictoryScene
+
+4. In this Last change I asked AI to: improve glitch effect, and turn it into a more modern glitch
