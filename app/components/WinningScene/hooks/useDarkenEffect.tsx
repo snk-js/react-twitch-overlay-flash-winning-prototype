@@ -12,7 +12,7 @@ export const useDarkenEffect = (trigger: number, delay: number = 0) => {
       }
 
       gsap.timeline({ delay }).to(".dark-overlay", {
-        opacity: 0.9,
+        opacity: 0.6,
         duration: 1.2,
         ease: "power2.out",
       });

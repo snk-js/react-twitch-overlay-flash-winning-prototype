@@ -33,7 +33,7 @@ const VictoryScene = () => {
   };
 
   return (
-    <div className="relative w-full h-full bg-gray-900 flex items-center justify-center overflow-hidden">
+    <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
       <DarkOverlay />
       <FlashOverlay />
       <LightningStripe />
