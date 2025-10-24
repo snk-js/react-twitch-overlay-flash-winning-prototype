@@ -5,13 +5,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 First, run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 ## Emphasize
@@ -37,8 +32,8 @@ https://www.awesomescreenshot.com/video/45609981?key=d00e5d46faf41cd011daa32a5ae
 
 
 ## Demo
-(a gif of the demo)
-![Victory Effect Demo](./public/effect-record.gif)
+
+https://github.com/user-attachments/assets/ccd138b9-496b-40e9-8633-bea232b598bb
 
 ## Effects
 
