@@ -13,7 +13,6 @@ export const ControlButtons = ({
 }: ControlButtonsProps) => {
   return (
     <div className="fixed top-6 left-6 z-50 flex flex-col gap-3">
-      {/* Trigger Button */}
       <button
         onClick={onTrigger}
         className="px-6 py-3 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600
@@ -33,7 +32,6 @@ export const ControlButtons = ({
         <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
       </button>
 
-      {/* Reset Button */}
       {showReset && (
         <button
           onClick={onReset}

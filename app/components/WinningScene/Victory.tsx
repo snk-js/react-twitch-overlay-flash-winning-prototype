@@ -1,4 +1,3 @@
-// Victory.tsx - Add the explosion effect
 "use client";
 
 import { useState } from "react";
@@ -18,13 +17,12 @@ import { VictoryText } from "../VictoryText";
 const VictoryScene = () => {
   const [victoryTrigger, setVictoryTrigger] = useState(0);
 
-  // All effects use the same trigger but with different delays
-  useDarkenEffect(victoryTrigger, 0); // Starts immediately
-  useLightningEffect(victoryTrigger, 0); // Lightning flash
-  useExplosionEffect(victoryTrigger, 0.3); // Explosion right after lightning
-  useLetterRevealEffect(victoryTrigger, 0.4); // After 0.4s
-  useFlashbangEffect(victoryTrigger, 0.42); // After 0.42s (with letters)
-  useGlitchEffect(victoryTrigger, 0.6); // After 0.6s
+  useDarkenEffect(victoryTrigger, 0);
+  useLightningEffect(victoryTrigger, 0);
+  useExplosionEffect(victoryTrigger, 0.3);
+  useLetterRevealEffect(victoryTrigger, 0.4);
+  useFlashbangEffect(victoryTrigger, 0.42);
+  useGlitchEffect(victoryTrigger, 0.6);
 
   const triggerVictory = () => {
     setVictoryTrigger((prev) => prev + 1);
@@ -36,20 +34,17 @@ const VictoryScene = () => {
 
   return (
     <div className="relative w-full h-full bg-gray-900 flex items-center justify-center overflow-hidden">
-      {/* Effect Overlays */}
       <DarkOverlay />
       <FlashOverlay />
       <LightningStripe />
       <ExplosionRing />
 
-      {/* Control Buttons */}
       <ControlButtons
         onTrigger={triggerVictory}
         onReset={resetVictory}
         showReset={victoryTrigger > 0}
       />
 
-      {/* Victory Text */}
       <VictoryText visible={victoryTrigger > 0} />
     </div>
   );

@@ -6,7 +6,6 @@ import gsap from "gsap";
 export const useLightningEffect = (trigger: number, delay: number = 0) => {
   useGSAP(
     () => {
-      // Reset when trigger is 0
       if (trigger === 0) {
         gsap.set(".lightning-stripe", {
           scaleX: 0,
