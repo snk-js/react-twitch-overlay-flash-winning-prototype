@@ -37,7 +37,7 @@ https://www.awesomescreenshot.com/video/45609981?key=d00e5d46faf41cd011daa32a5ae
 
 
 ## Demo
-
+(a gif of the demo)
 ![Victory Effect Demo](./public/effect-record.gif)
 
 ## Effects
